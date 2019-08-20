@@ -7,6 +7,7 @@ FROM jupyter/base-notebook:latest
 RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 ipython ipykernel kernda && \
     conda clean --all -f -y
 
+RUN ln -s $CONDA_DIR/envs/python2/bin/python $CONDA_DIR/bin/python2
 RUN ln -s $CONDA_DIR/envs/python2/bin/ipython $CONDA_DIR/bin/ipython2
 
 USER root
